@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>カラダビメソッド｜脳と身体を整える統合メソッド公式サイト</title>
+<meta name="description" content="カラダビメソッドは、膝・腰・首・肩の痛みを5層から整える、新しい統合アプローチです。直すのではなく、整う条件を設計する。">
+<meta property="og:title" content="カラダビメソッド｜脳と身体を整える統合メソッド">
+<meta property="og:description" content="直すのではなく、整う条件を設計する。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fafaf7; --bg-2:#f1efe8; --ink:#1c1c1a; --ink-2:#4a4a46;
+    --muted:#8a8a82; --line:#e3e0d6; --accent:#5b6b53; --accent-2:#c9b88a;
+    --max:1120px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Noto Serif JP","Inter",serif;font-weight:400;line-height:1.85;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  h1,h2,h3{font-weight:500;letter-spacing:.04em;line-height:1.4;margin:0}
+  h2{font-size:clamp(24px,3.4vw,36px);margin-bottom:24px} h3{font-size:20px;margin-bottom:12px}
+  p{margin:0 0 1em}
+  header.site{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,250,247,.85);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+  header.site.scrolled{border-color:var(--line)}
+  header.site .inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 24px}
+  .logo{font-weight:500;letter-spacing:.4em;font-size:15px}
+  nav.global ul{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.15em}
+  nav.global a{color:var(--ink-2);transition:color .2s} nav.global a:hover{color:var(--accent)}
+  .menu-btn{display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--ink)}
+  @media(max-width:780px){nav.global{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-top:1px solid var(--line);padding:24px}nav.global.open{display:block}nav.global ul{flex-direction:column;gap:20px}.menu-btn{display:block}}
+  .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 20%, rgba(91,107,83,.08), transparent 70%),radial-gradient(50% 40% at 10% 80%, rgba(201,184,138,.10), transparent 70%);pointer-events:none}
+  .hero .container{position:relative;z-index:1}
+  .hero h1{font-size:clamp(32px,5.5vw,60px);font-weight:400;line-height:1.45;letter-spacing:.06em;margin-bottom:32px}
+  .hero h1 small{display:block;font-size:.45em;color:var(--muted);font-weight:400;letter-spacing:.3em;margin-bottom:24px;font-family:"Inter",sans-serif}
+  .hero .lead{max-width:560px;font-size:16px;color:var(--ink-2);margin-bottom:48px}
+  .btn{display:inline-flex;align-items:center;gap:12px;padding:16px 32px;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.2em;transition:all .25s;cursor:pointer}
+  .btn:hover{background:transparent;color:var(--ink)} .btn.ghost{background:transparent;color:var(--ink)} .btn.ghost:hover{background:var(--ink);color:var(--bg)}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap}
+  section{padding:120px 0;border-top:1px solid var(--line)} section.no-border{border-top:0}
+  .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+  .pain-grid a{background:var(--bg);padding:40px 28px;display:flex;flex-direction:column;justify-content:space-between;min-height:200px;transition:background .3s}
+  .pain-grid a:hover{background:var(--bg-2)}
+  .pain-grid .num{font-family:"Inter",sans-serif;font-size:11px;color:var(--muted);letter-spacing:.3em}
+  .pain-grid .ttl{font-size:18px;font-weight:500;margin:16px 0 8px}
+  .pain-grid .desc{font-size:13px;color:var(--ink-2);line-height:1.7}
+  .layers{display:flex;flex-direction:column;gap:0;margin-top:48px;border-top:1px solid var(--line)}
+  .layer{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .3s}
+  .layer:hover{padding-left:16px}
+  .layer .lv{font-family:"Inter",sans-serif;font-size:13px;color:var(--accent);letter-spacing:.2em;padding-top:4px}
+  .layer h3{margin-bottom:8px;font-size:19px} .layer p{font-size:14px;color:var(--ink-2);margin:0}
+  .corep{background:var(--bg-2)}
+  .corep .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center}
+  .corep .photo{aspect-ratio:3/4;background:linear-gradient(135deg,#d8d4c5,#bfb89f);display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.25);font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em}
+  .corep blockquote{margin:0;font-size:18px;line-height:2;color:var(--ink)}
+  .corep .sig{margin-top:32px;font-family:"Inter",sans-serif;font-size:13px;color:var(--muted);letter-spacing:.2em}
+  .corep .sig strong{color:var(--ink);font-weight:500;display:block;margin-top:4px;font-size:15px;letter-spacing:.15em;font-family:"Noto Serif JP",serif}
+  @media(max-width:780px){.corep .grid{grid-template-columns:1fr;gap:32px}}
+  .offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px}
+  .offer{border:1px solid var(--line);padding:40px 32px;background:var(--bg);transition:transform .3s,border-color .3s}
+  .offer:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .offer .tag{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:var(--accent);margin-bottom:16px}
+  .offer h3{margin-bottom:12px;font-size:18px} .offer p{font-size:13px;color:var(--ink-2);margin-bottom:24px;line-height:1.8}
+  .offer .more{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.2em;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px}
+  .news{text-align:center;background:var(--ink);color:var(--bg);border:0}
+  .news h2{color:var(--bg)} .news p{color:rgba(250,250,247,.7);max-width:480px;margin:0 auto 32px}
+  .news form{display:flex;max-width:440px;margin:0 auto;gap:0;border:1px solid rgba(250,250,247,.3)}
+  .news input{flex:1;padding:14px 18px;background:transparent;border:0;color:var(--bg);font-family:"Inter",sans-serif;font-size:14px;outline:none}
+  .news input::placeholder{color:rgba(250,250,247,.4)}
+  .news button{padding:14px 24px;background:var(--bg);color:var(--ink);border:0;cursor:pointer;font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.2em}
+  .news button:hover{background:var(--accent-2)}
+  footer{padding:64px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;margin-bottom:40px}
+  footer .col h4{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:var(--ink);margin:0 0 16px}
+  footer .col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  footer .col a{color:var(--ink-2)} footer .col a:hover{color:var(--accent)}
+  footer .copy{padding-top:24px;border-top:1px solid var(--line);font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.2em}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<header class="site" id="hdr">
+  <div class="inner">
+    <a href="#top" class="logo">カラダビ</a>
+    <nav class="global" id="nav"><ul>
+      <li><a href="#pain">悩みから</a></li>
+      <li><a href="#method">メソッド</a></li>
+      <li><a href="#message">代表挨拶</a></li>
+      <li><a href="#offer">講座・会員</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ul></nav>
+    <button class="menu-btn" id="mbtn" aria-label="menu">☰</button>
+  </div>
+</header>
+<main id="top">
+<section class="hero no-border"><div class="container">
+  <h1><small>KARADABI METHOD</small>身体は、整える→日常化する、<br>の順で変わる。</h1>
+  <p class="lead">カラダビメソッドは、膝・腰・首・肩の痛みを<strong>5層から整える</strong>、新しい統合アプローチです。<br>直すのではなく、整う条件を設計する。</p>
+  <div class="btn-row"><a href="#method" class="btn">メソッドを知る</a><a href="#pain" class="btn ghost">悩みから探す</a></div>
+</div></section>
+<section id="pain" class="reveal"><div class="container">
+  <div class="eyebrow">01 — Your Concern</div>
+  <h2>あなたの悩みから、カラダビに触れる</h2>
+  <p style="max-width:560px;color:var(--ink-2)">マッサージしてもすぐ戻る、ストレッチをしても効かない。それは、整える「順番」が違うだけかもしれません。</p>
+  <div class="pain-grid">
+    <a href="#"><div><div class="num">01</div><div class="ttl">腰痛</div></div><div class="desc">治らない腰痛を、脳と神経の視点から解き直す。</div></a>
+    <a href="#"><div><div class="num">02</div><div class="ttl">肩こり・首こり</div></div><div class="desc">マッサージしてもすぐ戻る肩こりの方へ。</div></a>
+    <a href="#"><div><div class="num">03</div><div class="ttl">膝痛</div></div><div class="desc">階段が怖い・歩くと痛む膝の悩みに。</div></a>
+    <a href="#"><div><div class="num">04</div><div class="ttl">姿勢・猫背</div></div><div class="desc">姿勢は「気をつけ」では整わない。</div></a>
+    <a href="#"><div><div class="num">05</div><div class="ttl">つまずき・転倒予防</div></div><div class="desc">歩行の質を、土台から再設計する。</div></a>
+  </div>
+</div></section>
+<section id="method" class="reveal"><div class="container">
+  <div class="eyebrow">02 — The Method</div>
+  <h2>カラダビメソッドの5層構造</h2>
+  <p style="max-width:600px;color:var(--ink-2)">下の層が整って、初めて上の層は機能する。<br>身体を「直す」のではなく、整う条件を順に設計していくアプローチです。</p>
+  <div class="layers">
+    <div class="layer"><div class="lv">LAYER 01</div><div><h3>邪魔を外す</h3><p>痛みや緊張を生んでいる「妨げ」を、まず取り除く。整える前の前提条件をつくる層。</p></div></div>
+    <div class="layer"><div class="lv">LAYER 02</div><div><h3>脳の中の身体地図</h3><p>脳が描く身体マップを更新する。動きを変える前に、感覚と認識を整える神経科学的アプローチ。</p></div></div>
+    <div class="layer"><div class="lv">LAYER 03</div><div><h3>整う条件を設計する</h3><p>呼吸・姿勢・関節の協調を、無理なく整う形に再構築する。</p></div></div>
+    <div class="layer"><div class="lv">LAYER 04</div><div><h3>頑張らない身体づくり</h3><p>体芯力®の発想で、力まず、最小の努力で動ける身体を日常化する。</p></div></div>
+    <div class="layer"><div class="lv">LAYER 05</div><div><h3>身体を見る眼</h3><p>身体を観察する視点そのものを育てる。自分で整え続けられる人になる最終層。</p></div></div>
+  </div>
+</div></section>
+<section id="message" class="corep reveal"><div class="container"><div class="grid">
+  <div class="photo">PORTRAIT</div>
+  <div>
+    <div class="eyebrow">03 — Message</div>
+    <h2>カラダビメソッドは、<br>ふたりで考えました。</h2>
+    <blockquote>身体を「直す」という発想から離れたかった。<br>人の身体には、もともと整う力が備わっている。<br>私たちにできるのは、その条件を設計することだけです。<br><br>臨床の現場で出会ってきた一人ひとりの身体と、<br>脳・神経・運動の科学。そのふたつを橋渡しする方法を、<br>山﨑と鯨井のふたりで考え、形にしました。</blockquote>
+    <div class="sig">CO-FOUNDERS<br><strong>山﨑 ＆ 鯨井</strong><span style="display:block;color:var(--muted);font-size:12px;letter-spacing:.15em;margin-top:6px">体芯力®認定講師 / 理学療法士</span></div>
+  </div>
+</div></div></section>
+<section id="offer" class="reveal"><div class="container">
+  <div class="eyebrow">04 — Learn & Experience</div>
+  <h2>学ぶ・体験する</h2>
+  <div class="offer-grid">
+    <div class="offer"><div class="tag">MEMBERSHIP</div><h3>カラダビプレミアム</h3><p>月額会員でメソッドを深く学び続ける。限定動画・コラム・オンライン相談を提供。</p><a href="#" class="more">VIEW MORE →</a></div>
+    <div class="offer"><div class="tag">COURSE</div><h3>講座・ワークショップ</h3><p>体験する ― カラダビの講座一覧。単発・シリーズ・オンライン・対面で開催。</p><a href="#" class="more">VIEW MORE →</a></div>
+    <div class="offer"><div class="tag">SHOP</div><h3>冊子・動画単品</h3><p>独学で進めたい方へ。テーマ別冊子と単発動画教材。</p><a href="#" class="more">VIEW MORE →</a></div>
+    <div class="offer"><div class="tag">BLOG</div><h3>カラダビの現場から</h3><p>臨床・思想・学びのノート。定期更新のコラム。</p><a href="#" class="more">VIEW MORE →</a></div>
+  </div>
+</div></section>
+<section id="contact" class="news reveal"><div class="container">
+  <div class="eyebrow" style="color:rgba(250,250,247,.6)">05 — Newsletter</div>
+  <h2>整う身体の、最新の便り</h2>
+  <p>新しい講座・コラム・冊子の案内を、月に数回お届けします。</p>
+  <form onsubmit="event.preventDefault();alert('登録ありがとうございます（デモ）');">
+    <input type="email" placeholder="your@email.com" required>
+    <button type="submit">SUBSCRIBE</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="container">
+  <div class="row">
+    <div class="col"><div class="logo" style="margin-bottom:12px">カラダビ</div><div style="max-width:280px;font-size:12px;line-height:1.8">脳と身体を整える統合メソッド<br>KARADABI METHOD</div></div>
+    <div class="col"><h4>SITE</h4><ul><li><a href="#pain">悩みから</a></li><li><a href="#method">メソッド</a></li><li><a href="#offer">講座・会員</a></li><li><a href="#">ブログ</a></li></ul></div>
+    <div class="col"><h4>SNS</h4><ul><li><a href="#">X (Twitter)</a></li><li><a href="#">Instagram</a></li><li><a href="#">note</a></li><li><a href="#">YouTube</a></li></ul></div>
+    <div class="col"><h4>CONTACT</h4><ul><li><a href="#">お問い合わせ</a></li><li><a href="#">プライバシーポリシー</a></li><li><a href="#">特定商取引法</a></li></ul></div>
+  </div>
+  <div class="copy">© 2026 KARADABI. All rights reserved.</div>
+</div></footer>
+<script>
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+  document.getElementById('mbtn').onclick=()=>document.getElementById('nav').classList.toggle('open');
+  document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>document.getElementById('nav').classList.remove('open'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
