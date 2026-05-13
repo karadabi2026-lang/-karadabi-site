@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カラダビ｜症状別詳細コラム</title>
+<meta name="description" content="カラダビメソッドの症状別詳細コラム。腰痛・膝痛・肩こり・自律神経・パーキンソン病について、理学療法士の視点で解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --koshi: #C65911;
+  --koshi-light: #E89A6E;
+  --koshi-bg: #FBF5EF;
+  --kubi: #2E75B6;
+  --pd: #8B0000;
+  --jiritsu: #00B0A6;
+  --navy: #1F4E79;
+  --navy-soft: #4A6E8F;
+  --ink: #1A1A1A;
+  --ink-soft: #444444;
+  --ink-mute: #888888;
+  --paper: #FAF7F2;
+  --paper-deep: #F5EFE6;
+  --line: #E8DFD2;
+  --serif: 'Shippori Mincho', 'Yu Mincho', '游明朝', serif;
+  --sans: 'Noto Sans JP', 'Yu Gothic', sans-serif;
+  --display: 'Cormorant Garamond', 'Shippori Mincho', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* ============ Page Section System ============ */
+.page-section {
+  display: none;
+  min-height: 60vh;
+}
+.page-section.is-active {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ Header ============ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-logo {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--koshi);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.site-logo small {
+  display: block;
+  font-family: var(--display);
+  font-size: 10px;
+  font-style: italic;
+  color: var(--ink-mute);
+  letter-spacing: 0.15em;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav a {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.site-nav a:hover { color: var(--koshi); }
+.site-nav a.is-active { color: var(--koshi); font-weight: 500; }
+
+.site-nav a.cta {
+  padding: 10px 20px;
+  background: var(--ink);
+  color: var(--paper);
+  transition: all 0.3s ease;
+}
+.site-nav a.cta:hover { background: var(--koshi); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 24px;
+  color: var(--ink);
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 8px 0;
+  min-width: 200px;
+  display: none;
+  margin-top: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a {
+  display: block;
+  padding: 12px 24px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.dropdown-menu a:hover { background: var(--koshi-bg); }
+
+@media (max-width: 768px) {
+  .header-inner { padding: 12px 20px; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--paper);
+    padding: 24px;
+    gap: 16px;
+    border-top: 1px solid var(--line);
+    align-items: flex-start;
+  }
+  .site-nav.is-open { display: flex; }
+  .menu-toggle { display: block; }
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    border: none;
+    box-shadow: none;
+    padding: 8px 0 8px 16px;
+    background: transparent;
+  }
+  .dropdown-menu a { padding: 8px 0; }
+}
+
+/* ============ Common Section ============ */
+.section {
+  padding: 100px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--koshi);
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.section-eyebrow::before { content: '— '; margin-right: 4px; }
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+.section-title em { font-style: normal; color: var(--koshi); }
+
+.section-lead {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn::after { content: '→'; font-family: var(--display); font-size: 18px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.btn:hover::after { transform: translateX(8px); }
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--koshi); }
+.btn-koshi { background: var(--koshi); color: var(--paper); }
+.btn-koshi:hover { background: var(--ink); }
+.btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+/* ============ HOME / Hero ============ */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--paper-deep) 0%, var(--paper) 100%);
+  z-index: 0;
+}
+
+.hero-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 64px 64px;
+  gap: 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tagline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-tagline::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--koshi);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+.hero-headline em { font-style: normal; color: var(--koshi); }
+.hero-headline .small {
+  display: block;
+  font-size: 0.4em;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.1em;
+  margin-top: 16px;
+  font-family: var(--sans);
+}
+
+.hero-lead {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero-visual { position: relative; height: 60vh; min-height: 440px; }
+
+.hero-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.hero-mark-jp {
+  font-family: var(--serif);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 600;
+  color: var(--koshi);
+  line-height: 0.85;
+  letter-spacing: 0.04em;
+  opacity: 0.92;
+}
+
+.hero-mark-line { width: 60px; height: 1px; background: var(--koshi); margin: 24px auto 0; }
+
+.hero-mark-sub {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  letter-spacing: 0.15em;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: auto; }
+  .hero-main { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+  .hero-visual { order: -1; height: 30vh; min-height: 240px; }
+  .hero::before { width: 100%; opacity: 0.4; }
+}
+
+/* Belief */
+.belief {
+  background: var(--paper-deep);
+  padding: 100px 32px;
+  text-align: center;
+}
+.belief-inner { max-width: 800px; margin: 0 auto; }
+.belief-mark {
+  font-family: var(--display);
+  font-size: 80px;
+  font-style: italic;
+  color: var(--koshi);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+.belief-message {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.95;
+  color: var(--ink);
+}
+.belief-message em { color: var(--koshi); font-style: normal; }
+.belief-divider { width: 60px; height: 1px; background: var(--koshi); margin: 32px auto; }
+.belief-sign {
+  font-family: var(--display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+}
+
+/* Symptoms grid */
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 48px;
+}
+
+.symptom-card {
+  background: var(--paper);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  min-height: 280px;
+}
+.symptom-card:hover { background: var(--paper-deep); }
+
+.symptom-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--koshi);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+}
+
+.symptom-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.symptom-desc {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-mute);
+  line-height: 1.85;
+  font-weight: 300;
+  flex: 1;
+}
+
+.symptom-arrow {
+  font-family: var(--display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--koshi);
+  letter-spacing: 0.1em;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+.symptom-arrow::after { content: '→'; font-size: 16px; }
+.symptom-card:hover .symptom-arrow { gap: 16px; }
+
+/* Approach */
+.approach {
+  background: var(--paper-deep);
+  padding: 120px 32px;
+}
+
+.approach-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.approach-text p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.05;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+.approach-text p strong { color: var(--ink); font-weight: 600; }
+
+.approach-points { display: flex; flex-direction: column; gap: 24px; }
+
+.approach-point {
+  background: var(--paper);
+  padding: 32px;
+  border-left: 3px solid var(--koshi);
+}
+
+.approach-point h4 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.approach-point p {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-mute);
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .approach-inner { grid-template-columns: 1fr; gap: 40px; }
+  .approach { padding: 80px 24px; }
+}
+
+/* Services list */
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.service-item {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+.service-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+
+.service-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--koshi);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.service-title-h {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.service-price {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--koshi);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.service-desc {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+.service-link {
+  font-family: var(--display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--koshi);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+.service-link::after { content: '→'; font-size: 16px; }
+.service-link:hover { gap: 16px; }
+
+@media (max-width: 768px) {
+  .services-list { grid-template-columns: 1fr; gap: 0; }
+  .service-item:nth-last-child(-n+2) { border-bottom: none; }
+  .service-item:last-child { border-bottom: 1px solid var(--line); }
+}
+
+/* Featured Promotion */
+.featured {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 140px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center right, rgba(198, 89, 17, 0.18) 0%, transparent 60%);
+}
+
+.featured-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.featured-eyebrow {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--koshi-light);
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+
+.featured-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--paper);
+  margin-bottom: 24px;
+}
+.featured-title em { color: var(--koshi-light); font-style: normal; }
+
+.featured-desc {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+}
+
+.featured-meta {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+}
+.featured-meta strong { color: var(--koshi-light); font-style: normal; font-weight: 600; }
+
+.featured-visual { text-align: center; }
+
+.featured-counter {
+  font-family: var(--display);
+  font-size: clamp(120px, 18vw, 220px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--koshi-light);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+.featured-counter-label {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.2em;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .featured { padding: 80px 24px; }
+  .featured-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* News */
+.news-section {
+  background: var(--paper);
+  padding: 100px 32px;
+}
+.news-section-inner { max-width: 1080px; margin: 0 auto; }
+
+.news-list { display: flex; flex-direction: column; margin-top: 32px; }
+
+.news-item {
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: 140px 100px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.news-item:first-child { border-top: 1px solid var(--line); }
+.news-item:hover { background: var(--koshi-bg); padding-left: 16px; padding-right: 16px; }
+
+.news-date {
+  font-family: var(--display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+}
+
+.news-tag {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--koshi);
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  border: 1px solid var(--koshi);
+  padding: 4px 12px;
+  display: inline-block;
+  width: fit-content;
+}
+.news-tag.event { color: var(--jiritsu); border-color: var(--jiritsu); }
+.news-tag.article { color: var(--navy); border-color: var(--navy); }
+
+.news-title {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .news-item { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
+}
+
+/* Final CTA */
+.final-cta {
+  background: var(--paper-deep);
+  padding: 120px 32px;
+  text-align: center;
+}
+.final-cta-inner { max-width: 720px; margin: 0 auto; }
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.final-cta h2 em { color: var(--koshi); font-style: normal; }
+.final-cta p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+}
+
+/* ============ Page Hero (other pages) ============ */
+.page-hero {
+  padding: 80px 32px 60px;
+  background: var(--paper);
+  text-align: center;
+}
+.page-hero-inner { max-width: 880px; margin: 0 auto; }
+
+.page-hero-eyebrow {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.page-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.page-hero-title em { color: var(--koshi); font-style: normal; }
+
+.page-hero-lead {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ============ About Page ============ */
+.why {
+  background: var(--paper-deep);
+  padding: 100px 32px;
+}
+.why-inner { max-width: 880px; margin: 0 auto; }
+
+.why p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.05;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+.why p strong { color: var(--ink); font-weight: 600; }
+
+.why-quote {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.95;
+  color: var(--ink);
+  font-style: italic;
+  text-align: center;
+  margin: 64px auto;
+  max-width: 720px;
+  padding: 0 24px;
+}
+.why-quote::before, .why-quote::after {
+  font-family: var(--display);
+  font-size: 60px;
+  color: var(--koshi);
+  opacity: 0.3;
+  line-height: 0;
+}
+.why-quote::before { content: '"'; vertical-align: -0.4em; margin-right: 8px; }
+.why-quote::after { content: '"'; vertical-align: -0.7em; margin-left: 8px; }
+
+.yamazaki {
+  background: var(--paper);
+  padding: 120px 32px;
+}
+.yamazaki-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+.yamazaki-visual { text-align: center; }
+.yamazaki-portrait {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--paper-deep) 0%, var(--koshi-bg) 100%);
+  border: 1px solid var(--line);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.yamazaki-portrait::before {
+  content: '山崎';
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 600;
+  color: var(--koshi);
+  opacity: 0.2;
+  position: absolute;
+}
+.yamazaki-portrait span {
+  position: relative;
+  z-index: 2;
+  background: var(--paper);
+  padding: 16px 24px;
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--koshi);
+  font-size: 14px;
+}
+.yamazaki-name {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 24px;
+}
+.yamazaki-role {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--koshi);
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+
+.yamazaki-bio h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+.yamazaki-bio h3:first-child { margin-top: 0; }
+.yamazaki-bio p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+.yamazaki-credentials {
+  background: var(--paper-deep);
+  padding: 32px;
+  margin-top: 32px;
+  border-left: 3px solid var(--koshi);
+}
+.yamazaki-credentials h4 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+.yamazaki-credentials ul li {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.yamazaki-credentials ul li::before {
+  content: '◆';
+  color: var(--koshi);
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+@media (max-width: 768px) {
+  .yamazaki { padding: 80px 24px; }
+  .yamazaki-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.method {
+  background: var(--paper-deep);
+  padding: 120px 32px;
+}
+.method-inner { max-width: 1080px; margin: 0 auto; }
+.method-intro { text-align: center; margin-bottom: 64px; }
+.method-intro p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.layers-list { display: flex; flex-direction: column; gap: 16px; }
+
+.layer-card {
+  background: var(--paper);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 80px 1fr 200px;
+  gap: 32px;
+  align-items: center;
+  border-left: 4px solid;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.layer-card:hover { transform: translateX(4px); }
+
+.layer-1 { border-color: #2E75B6; }
+.layer-2 { border-color: #00B0A6; }
+.layer-3 { border-color: #70AD47; }
+.layer-4 { border-color: #C65911; }
+.layer-5 { border-color: #7030A0; }
+
+.layer-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1;
+}
+.layer-1 .layer-num { color: #2E75B6; }
+.layer-2 .layer-num { color: #00B0A6; }
+.layer-3 .layer-num { color: #70AD47; }
+.layer-4 .layer-num { color: #C65911; }
+.layer-5 .layer-num { color: #7030A0; }
+
+.layer-content h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.layer-content h3 small {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-left: 12px;
+  letter-spacing: 0.1em;
+}
+.layer-content p {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  font-weight: 300;
+}
+.layer-tag {
+  font-family: var(--display);
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-align: right;
+  font-weight: 500;
+}
+.layer-1 .layer-tag { color: #2E75B6; }
+.layer-2 .layer-tag { color: #00B0A6; }
+.layer-3 .layer-tag { color: #70AD47; }
+.layer-4 .layer-tag { color: #C65911; }
+.layer-5 .layer-tag { color: #7030A0; }
+
+@media (max-width: 768px) {
+  .method { padding: 80px 24px; }
+  .layer-card { padding: 24px; grid-template-columns: 60px 1fr; gap: 16px; }
+  .layer-num { font-size: 36px; }
+  .layer-tag { display: none; }
+}
+
+/* ============ Symptom pages ============ */
+.symptom-hero {
+  padding: 60px 32px 40px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+.symptom-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--paper-deep) 0%, var(--paper) 100%);
+}
+.symptom-hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+.breadcrumb a { color: var(--ink-mute); cursor: pointer; transition: color 0.3s ease; }
+.breadcrumb a:hover { color: var(--koshi); }
+.breadcrumb span { margin: 0 12px; }
+
+.symptom-eyebrow {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--theme-color, var(--koshi));
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.symptom-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+.symptom-title em { font-style: normal; color: var(--theme-color, var(--koshi)); }
+
+.symptom-lead {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  max-width: 720px;
+}
+
+.content-section {
+  padding: 80px 32px;
+  background: var(--paper);
+}
+.content-section.alt { background: var(--paper-deep); }
+
+.content-inner { max-width: 880px; margin: 0 auto; }
+
+.content-inner h2 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.8vw, 34px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.content-inner h2 em { font-style: normal; color: var(--theme-color, var(--koshi)); }
+
+.content-inner h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+
+.content-inner p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.05;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+.content-inner p strong { color: var(--ink); font-weight: 600; }
+
+.checklist {
+  background: var(--paper);
+  padding: 32px 40px;
+  margin: 32px 0;
+  border-left: 3px solid var(--theme-color, var(--koshi));
+}
+.alt .checklist { background: var(--paper-deep); border-color: var(--ink); }
+
+.checklist h4 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--theme-color, var(--koshi));
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.checklist ul li {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  padding-left: 28px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.checklist ul li::before {
+  content: '✓';
+  color: var(--theme-color, var(--koshi));
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.quote-box {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 2.4vw, 24px);
+  line-height: 1.95;
+  color: var(--ink);
+  text-align: center;
+  margin: 48px 0;
+  padding: 32px 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanism {
+  background: var(--paper);
+  padding: 48px;
+  margin: 32px 0;
+  border: 1px solid var(--line);
+}
+.mechanism h4 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.mechanism-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: center;
+}
+
+.mechanism-step {
+  flex: 1;
+  padding: 24px 16px;
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+}
+.mechanism-step strong {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 8px;
+}
+.mechanism-step small {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-mute);
+  line-height: 1.6;
+}
+.mechanism-arrow {
+  font-family: var(--display);
+  font-size: 24px;
+  color: var(--koshi);
+}
+
+@media (max-width: 768px) {
+  .mechanism { padding: 24px; }
+  .mechanism-flow { flex-direction: column; gap: 12px; }
+  .mechanism-arrow { transform: rotate(90deg); font-size: 20px; }
+}
+
+.cta-card {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 56px 40px;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(198, 89, 17, 0.18) 0%, transparent 60%);
+}
+.cta-card-inner { position: relative; z-index: 2; }
+
+.cta-card h3 {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.6vw, 28px);
+  color: var(--paper);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.cta-card h3 em { color: var(--koshi-light); font-style: normal; }
+
+.cta-card p {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+  line-height: 1.95;
+}
+
+.related {
+  background: var(--paper);
+  padding: 80px 32px;
+  border-top: 1px solid var(--line);
+}
+.related-inner { max-width: 1080px; margin: 0 auto; }
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.related-card {
+  padding: 32px 24px;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--theme-color, var(--koshi));
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.related-card:hover { transform: translateX(4px); }
+.related-card h4 {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.related-card p {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+.related-card a {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--theme-color, var(--koshi));
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+.related-card a::after { content: ' →'; }
+
+/* Theme color override per page */
+.symptom-koshi-page { --theme-color: #C65911; }
+.symptom-hiza-page { --theme-color: #C65911; }
+.symptom-kata-page { --theme-color: #2E75B6; }
+.symptom-jiritsu-page { --theme-color: #00B0A6; }
+.symptom-pd-page { --theme-color: #8B0000; }
+
+/* ============ Services Page ============ */
+.service-detail {
+  padding: 80px 32px;
+  background: var(--paper);
+}
+.service-detail.alt { background: var(--paper-deep); }
+.service-detail-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.service-meta-block {
+  position: sticky;
+  top: 100px;
+}
+
+.service-num-large {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.service-name-large {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.service-tag-large {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--koshi);
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.service-price-large {
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 500;
+  color: var(--koshi);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.service-price-large small {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-left: 8px;
+}
+
+.service-duration {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 28px;
+}
+
+.service-content h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+.service-content h3:first-child { margin-top: 0; }
+
+.service-content p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.05;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+.service-content p strong { color: var(--ink); font-weight: 600; }
+
+.service-features {
+  background: var(--paper-deep);
+  padding: 28px;
+  margin: 24px 0;
+  border-left: 3px solid var(--koshi);
+}
+.alt .service-features { background: var(--paper); }
+.service-features h4 {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.service-features ul li {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.service-features ul li::before {
+  content: '◆';
+  color: var(--koshi);
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.service-cta-row { display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .service-detail { padding: 60px 24px; }
+  .service-detail-inner { grid-template-columns: 1fr; gap: 32px; }
+  .service-meta-block { position: static; }
+}
+
+.comparison {
+  background: var(--paper);
+  padding: 80px 32px;
+}
+.comparison-inner { max-width: 1080px; margin: 0 auto; }
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 48px;
+}
+
+.comparison-table th {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 600;
+  padding: 20px 16px;
+  background: var(--paper-deep);
+  border-bottom: 2px solid var(--koshi);
+  text-align: left;
+}
+.comparison-table th:first-child {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.comparison-table td {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.comparison-table td:first-child {
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .comparison-table { font-size: 12px; }
+  .comparison-table th, .comparison-table td { padding: 12px 8px; }
+}
+
+/* ============ News Page ============ */
+.news-page-content {
+  background: var(--paper);
+  padding: 80px 32px;
+}
+.news-page-inner { max-width: 880px; margin: 0 auto; }
+
+.news-article {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 140px 100px 1fr;
+  gap: 24px;
+  align-items: baseline;
+  transition: padding 0.3s ease;
+  cursor: pointer;
+}
+.news-article:first-child { border-top: 1px solid var(--line); }
+.news-article:hover { background: var(--paper-deep); padding-left: 16px; padding-right: 16px; }
+
+.news-article .news-summary {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .news-article { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+}
+
+/* ============ Contact Page ============ */
+.channels {
+  background: var(--paper);
+  padding: 80px 32px 60px;
+}
+.channels-inner { max-width: 1080px; margin: 0 auto; }
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.channel-card {
+  padding: 48px 32px;
+  background: var(--paper-deep);
+  border-top: 3px solid var(--koshi);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.channel-card:hover { transform: translateY(-4px); }
+
+.channel-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.channel-icon {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--koshi);
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.channel-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.channel-desc {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.channel-meta {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+}
+.channel-meta strong { color: var(--koshi); font-style: normal; font-weight: 600; }
+
+.channel-link {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--koshi);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+  cursor: pointer;
+}
+.channel-link::after { content: '→'; font-family: var(--display); font-size: 18px; }
+.channel-link:hover { gap: 16px; }
+
+.form-section {
+  background: var(--paper-deep);
+  padding: 80px 32px;
+}
+.form-inner { max-width: 720px; margin: 0 auto; }
+.form-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+  text-align: center;
+}
+.form-section h2 em { color: var(--koshi); font-style: normal; }
+.form-section .lead {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.contact-form {
+  background: var(--paper);
+  padding: 48px;
+  border: 1px solid var(--line);
+}
+
+.form-group { margin-bottom: 28px; }
+.form-group label {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--koshi);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.form-group label .required { color: var(--pd); margin-left: 4px; }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { outline: none; border-color: var(--koshi); }
+
+.form-group textarea { min-height: 140px; resize: vertical; line-height: 1.85; }
+
+.form-help { font-family: var(--sans); font-size: 12px; color: var(--ink-mute); margin-top: 6px; }
+
+.form-submit { text-align: center; margin-top: 16px; }
+.form-submit button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 40px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.form-submit button::after {
+  content: '→';
+  font-family: var(--display);
+  font-size: 20px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.form-submit button:hover { background: var(--koshi); }
+.form-submit button:hover::after { transform: translateX(8px); }
+
+.form-note {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 12px;
+  color: var(--ink-mute);
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .contact-form { padding: 32px 24px; }
+}
+
+.trust {
+  background: var(--paper);
+  padding: 80px 32px;
+}
+.trust-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.trust h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.trust p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 2.0;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+.trust .quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.95;
+  color: var(--ink);
+  margin: 32px 0;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.final-band {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 100px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(198, 89, 17, 0.18) 0%, transparent 60%);
+}
+.final-band-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.final-band h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--paper);
+  margin-bottom: 24px;
+}
+.final-band h2 em { color: var(--koshi-light); font-style: normal; }
+.final-band p {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 2.0;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+
+/* ============ Footer ============ */
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 80px 32px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(circle at right top, rgba(198, 89, 17, 0.1) 0%, transparent 60%);
+}
+
+.footer-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--koshi-light);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.footer-tagline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+}
+
+.footer-desc {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+}
+
+.footer-col h4 {
+  font-family: var(--display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--koshi-light);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.3s ease;
+  font-weight: 300;
+  cursor: pointer;
+}
+.footer-col ul li a:hover { color: var(--koshi-light); }
+
+.footer-bottom {
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+}
+
+.footer-final-tag {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .site-footer { padding: 60px 24px 24px; }
+}
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { opacity: 0; animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.fade-up.delay-1 { animation-delay: 0.15s; }
+.fade-up.delay-2 { animation-delay: 0.3s; }
+.fade-up.delay-3 { animation-delay: 0.45s; }
+
+@media (max-width: 768px) {
+  .section { padding: 60px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">
+      カラダビ
+      <small>KARADA-BI</small>
+    </a>
+    <nav class="site-nav" id="nav">
+      <a href="index.html">← トップに戻る</a>
+      <div class="dropdown">
+        <a>症状から探す ▾</a>
+        <div class="dropdown-menu">
+          <a data-page="koshi">腰の痛み</a>
+          <a data-page="hiza">膝の痛み</a>
+          <a data-page="kata">肩こり・首痛</a>
+          <a data-page="jiritsu">慢性疲労・自律神経</a>
+          <a data-page="pd">パーキンソン病</a>
+        </div>
+      </div>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('is-open')">≡</button>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<div class="page-section is-active" id="page-home">
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow fade-up">— Articles · Symptom Library</div>
+      <h1 class="page-hero-title fade-up delay-1">症状別<em>詳細コラム</em></h1>
+      <p class="page-hero-lead fade-up delay-2">
+        マッサージや整体で戻ってしまう不調を、脳と神経の視点で解き直す。<br>
+        5つの症状別に、原因と整え方を理学療法士の視点でお話しします。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="symptoms-grid">
+      <a class="symptom-card" data-page="koshi">
+        <div class="symptom-num">— 01</div>
+        <h3 class="symptom-title">腰の痛み</h3>
+        <p class="symptom-desc">慢性腰痛・反り腰・前屈時の痛み。整体で戻ってしまう方の、本当の原因とは。</p>
+        <span class="symptom-arrow">詳しく見る</span>
+      </a>
+      <a class="symptom-card" data-page="hiza">
+        <div class="symptom-num">— 02</div>
+        <h3 class="symptom-title">膝の痛み</h3>
+        <p class="symptom-desc">変形性膝関節症・階段昇降の痛み・しゃがめない。膝そのものではない原因へのアプローチ。</p>
+        <span class="symptom-arrow">詳しく見る</span>
+      </a>
+      <a class="symptom-card" data-page="kata">
+        <div class="symptom-num">— 03</div>
+        <h3 class="symptom-title">肩こり・首痛</h3>
+        <p class="symptom-desc">肩甲骨ストレッチで抜けないコリ、頭痛・自律神経症状を伴う首肩問題。</p>
+        <span class="symptom-arrow">詳しく見る</span>
+      </a>
+      <a class="symptom-card" data-page="jiritsu">
+        <div class="symptom-num">— 04</div>
+        <h3 class="symptom-title">慢性疲労・自律神経</h3>
+        <p class="symptom-desc">原因不明の倦怠感・睡眠の質の低下・自律神経の乱れ。身体側からのアプローチを。</p>
+        <span class="symptom-arrow">詳しく見る</span>
+      </a>
+      <a class="symptom-card" data-page="pd">
+        <div class="symptom-num">— 05</div>
+        <h3 class="symptom-title">パーキンソン病</h3>
+        <p class="symptom-desc">PD当事者・ご家族・支援者へ。通院困難でもできる、自宅での運動療法ガイド。</p>
+        <span class="symptom-arrow">詳しく見る</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="final-band">
+    <div class="final-band-inner">
+      <h2>本サイトに<em>戻る</em></h2>
+      <p>カラダビメソッド全体については、トップページをご覧ください。</p>
+      <div class="hero-cta-group" style="justify-content: center; gap: 16px;">
+        <a class="btn btn-koshi" href="index.html">← トップへ戻る</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ Symptom: Koshi (腰の痛み) ============ -->
+<div class="page-section symptom-koshi-page" id="page-koshi">
+  <section class="symptom-hero">
+    <div class="symptom-hero-inner">
+      <div class="breadcrumb fade-up">
+        <a data-page="home">ホーム</a>
+        <span>/</span>
+        <a data-page="home">症状から探す</a>
+        <span>/</span>
+        腰の痛み
+      </div>
+      <div class="symptom-eyebrow fade-up delay-1">— Symptom 01 / Lower Back Pain</div>
+      <h1 class="symptom-title fade-up delay-2">
+        慢性腰痛が<em>治らない</em>本当の理由。<br>
+        整体で揉んでも戻ってしまう方へ。
+      </h1>
+      <p class="symptom-lead fade-up delay-3">
+        腰痛の本当の原因は、腰そのものではありません。<br>
+        多くの方が見落としている「骨盤帯のハブ機能不全」という、<br>
+        もっと根の深い構造的な問題について、理学療法士の視点でお話しします。
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>このページが、<em>対象とする方</em></h2>
+      <p>もし、以下の項目に3つ以上当てはまるなら、このページは、あなたのために書かれています。</p>
+      <div class="checklist">
+        <h4>こんな方へ</h4>
+        <ul>
+          <li>整体や整骨院に通っているが、3日経つと腰の痛みが戻る</li>
+          <li>整形外科で「骨に異常はない」と言われ、湿布や鎮痛剤を処方された</li>
+          <li>朝起きた時に腰が固く、動き出すまでに時間がかかる</li>
+          <li>長時間座った後、立ち上がる時に腰が痛む</li>
+          <li>前屈みになる動作(物を拾う・靴を履く)が辛い</li>
+          <li>反り腰・出っ尻と、人から指摘されたことがある</li>
+          <li>マッサージしてもらうと楽になるが、その日のうちに戻ってしまう</li>
+        </ul>
+      </div>
+      <p>あなたが整体に通い続けても良くならなかったのは、あなたのせいではありません。<strong>良くならない仕組みの中にいただけ</strong>です。</p>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="content-inner">
+      <h2>慢性腰痛の本当の原因は、<br><em>「骨盤帯のハブ機能不全」</em>です。</h2>
+      <p>結論から言います。慢性腰痛の本当の原因は、<strong>腰そのものではなく、骨盤帯にあります</strong>。</p>
+      <p>骨盤帯は、背骨(軸系)と下肢(脚)をつなぐ「ハブ」の役割を担っています。歩く・立つ・座る・しゃがむ──すべての動きの中で、このハブが体重の支持と推進を切り替えています。</p>
+      <h3>ハブが弱ると、腰に負荷が流れ込む</h3>
+      <p>このハブの機能が低下すると、本来骨盤帯が担うべき仕事が、腰椎(腰の骨)に流れ込みます。<strong>骨盤帯の代償として腰椎が働き続けることが、慢性腰痛の正体</strong>です。</p>
+      <div class="mechanism">
+        <h4>慢性腰痛が起きる3ステップ</h4>
+        <div class="mechanism-flow">
+          <div class="mechanism-step">
+            <strong>① 末梢の感覚低下</strong>
+            <small>足裏・股関節周辺の感覚が鈍り、姿勢制御が崩れる</small>
+          </div>
+          <div class="mechanism-arrow">→</div>
+          <div class="mechanism-step">
+            <strong>② ハブ機能不全</strong>
+            <small>骨盤帯が動きの中継として機能しなくなる</small>
+          </div>
+          <div class="mechanism-arrow">→</div>
+          <div class="mechanism-step">
+            <strong>③ 腰椎の代償</strong>
+            <small>腰の筋・関節が過剰に働き、慢性的な痛みになる</small>
+          </div>
+        </div>
+      </div>
+      <p>だから、<strong>腰だけ揉んでも戻ります。腰だけ温めても戻ります</strong>。本当の犯人は、別の場所にいるからです。</p>
+      <p class="quote-box">腰の痛みは、被害者です。<br>本当の犯人は、骨盤帯のハブ機能不全。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>カラダビの<em>3つのアプローチ</em>。</h2>
+      <h3>アプローチ1:末梢からの感覚を整える</h3>
+      <p>足裏・股関節周辺の感覚を取り戻すことから始めます。これらは姿勢制御の出発点であり、ここの感覚が鈍っている限り、骨盤帯の機能は戻りません。</p>
+      <h3>アプローチ2:中枢を整える(呼吸とボディマップ)</h3>
+      <p>横隔膜呼吸の再学習と、骨盤の脳内地図(ボディマップ)の再構築。慢性腰痛の方のほぼ全員に呼吸の問題があります。</p>
+      <h3>アプローチ3:体重移動と動きの統合</h3>
+      <p>座位での体重移動から始めて、立位・歩行・日常動作へと段階的に展開していきます。</p>
+      <div class="cta-card">
+        <div class="cta-card-inner">
+          <h3>腰膝コース・<em>お問い合わせ</em></h3>
+          <p>最初の50名限定で、永久40%割引価格で受講いただけます。<br>一緒に、新しい整体のかたちを作ってくださる方を、お待ちしています。</p>
+          <a class="btn btn-koshi" href="index.html#contact">詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="section-eyebrow">— Related</div>
+      <h2 class="section-title">関連する症状ページ</h2>
+      <div class="related-grid">
+        <div class="related-card" data-page="hiza">
+          <h4>膝の痛み</h4>
+          <p>腰痛と膝痛は、骨盤帯のハブ機能を介して密接に関わっています。</p>
+          <a>膝の痛みのページへ</a>
+        </div>
+        <div class="related-card" data-page="kata">
+          <h4>肩こり・首痛</h4>
+          <p>慢性腰痛と肩こりは、姿勢制御の崩れという共通の根を持ちます。</p>
+          <a>肩こり・首痛のページへ</a>
+        </div>
+        <div class="related-card" data-page="jiritsu">
+          <h4>慢性疲労・自律神経</h4>
+          <p>慢性腰痛の背後に、自律神経の乱れが隠れていることがあります。</p>
+          <a>慢性疲労・自律神経へ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ Symptom: Hiza (膝の痛み) ============ -->
+<div class="page-section symptom-hiza-page" id="page-hiza">
+  <section class="symptom-hero">
+    <div class="symptom-hero-inner">
+      <div class="breadcrumb"><a data-page="home">ホーム</a><span>/</span><a data-page="home">症状から探す</a><span>/</span>膝の痛み</div>
+      <div class="symptom-eyebrow">— Symptom 02 / Knee Pain</div>
+      <h1 class="symptom-title">変形性膝関節症・慢性的な<em>膝の痛み</em>。<br>本当の原因は、膝ではない場所に。</h1>
+      <p class="symptom-lead">階段昇降が辛い、しゃがめない、立ち上がる時に痛む──<br>その膝の痛みの本当の原因は、膝そのものではないかもしれません。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>このページが、<em>対象とする方</em></h2>
+      <div class="checklist">
+        <h4>こんな方へ</h4>
+        <ul>
+          <li>階段の昇り降り、特に降りる時に膝が痛む</li>
+          <li>しゃがむのが怖い、または、しゃがめない</li>
+          <li>長時間座った後、立ち上がる時に膝が痛む</li>
+          <li>整形外科で「変形性膝関節症」と診断された</li>
+          <li>ヒアルロン酸注射やサポーターでしのいでいるが、根本的には変わらない</li>
+          <li>O脚またはX脚と指摘されたことがある</li>
+        </ul>
+      </div>
+      <p>膝の痛みは、<strong>痛む場所(膝)に、本当の原因がない</strong>ことが多くあります。</p>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="content-inner">
+      <h2>膝の痛みの本当の原因は、<br><em>骨盤帯と足部</em>の機能不全。</h2>
+      <p>膝関節は、構造的に「中継地点」です。<strong>膝そのものは動きを生み出す場所ではなく、上下をつなぐ場所</strong>です。</p>
+      <h3>上(骨盤帯)の問題が、膝に降りてくる</h3>
+      <p>骨盤帯のハブ機能が低下し、股関節が十分に動かなくなると、その動きの不足を膝が代償します。これが膝関節への負荷を生みます。</p>
+      <h3>下(足部)の問題が、膝に上がってくる</h3>
+      <p>足裏の3点支持(母趾球・小趾球・踵)が崩れると、膝が内側や外側に捻れる動きを強いられる。これが、変形性膝関節症の進行に関わります。</p>
+      <p class="quote-box">膝の痛みは、骨盤帯と足部の<br>「板挟み」になっている結果。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>3カ月後に<em>期待できる変化</em>。</h2>
+      <div class="checklist">
+        <h4>多くの方に現れる変化</h4>
+        <ul>
+          <li>階段を降りる時の、膝への負荷感が軽減する</li>
+          <li>しゃがみ動作が、踵を浮かせずに行いやすくなる</li>
+          <li>長時間立っていても、膝が固くなりにくい</li>
+          <li>歩いている時、膝の向きを意識できるようになる</li>
+          <li>万が一痛みが戻った時の、自分なりの対処法を持てる</li>
+        </ul>
+      </div>
+      <p>変形性膝関節症のような器質的変化は、3カ月で「元通り」にはなりません。しかし、<strong>膝への負荷を減らし、痛みなく動ける範囲を広げる</strong>ことは可能です。</p>
+      <div class="cta-card">
+        <div class="cta-card-inner">
+          <h3>カラダビの<em>3カ月プログラム</em></h3>
+          <p>3カ月かけて、自分の身体を取り戻すプログラム。詳細はお問い合わせください。</p>
+          <a class="btn btn-koshi" href="index.html#contact">詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="section-eyebrow">— Related</div>
+      <h2 class="section-title">関連する症状ページ</h2>
+      <div class="related-grid">
+        <div class="related-card" data-page="koshi">
+          <h4>腰の痛み</h4>
+          <p>膝の痛みと腰痛は、骨盤帯のハブ機能を介して密接に関わります。</p>
+          <a>腰の痛みのページへ</a>
+        </div>
+        <div class="related-card" data-page="jiritsu">
+          <h4>慢性疲労・自律神経</h4>
+          <p>慢性的な膝痛が、自律神経の乱れに繋がっていることもあります。</p>
+          <a>慢性疲労・自律神経へ</a>
+        </div>
+        <div class="related-card" data-page="pd">
+          <h4>パーキンソン病</h4>
+          <p>PDの方の運動療法にも、膝関節周辺の整えは重要です。</p>
+          <a>パーキンソン病のページへ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ Symptom: Kata (肩こり・首痛) ============ -->
+<div class="page-section symptom-kata-page" id="page-kata">
+  <section class="symptom-hero">
+    <div class="symptom-hero-inner">
+      <div class="breadcrumb"><a data-page="home">ホーム</a><span>/</span><a data-page="home">症状から探す</a><span>/</span>肩こり・首痛</div>
+      <div class="symptom-eyebrow">— Symptom 03 / Neck & Shoulder</div>
+      <h1 class="symptom-title">肩甲骨ストレッチでは<br>抜けない<em>肩こり</em>を、<br>整え直す。</h1>
+      <p class="symptom-lead">マッサージで揉んでも、ストレッチをしても、また戻ってしまう肩こり。<br>その本当の原因は、頭頸部の代償と胸郭の可動性低下にあります。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>このページが、<em>対象とする方</em></h2>
+      <div class="checklist">
+        <h4>こんな方へ</h4>
+        <ul>
+          <li>マッサージや整体で揉んでもらっても、3日で肩こりが戻る</li>
+          <li>ストレッチを続けているが、深い凝りが抜けない</li>
+          <li>デスクワーク中、首・肩・背中上部がカチカチに固まる</li>
+          <li>緊張型頭痛、または、めまいを伴うことがある</li>
+          <li>呼吸が浅く、深く息を吸えない感覚がある</li>
+          <li>ストレートネック、または、巻き肩と指摘された</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="content-inner">
+      <h2>慢性肩こりの本当の原因は、<br><em>頭頸部の代償</em>と<em>胸郭の可動性低下</em>。</h2>
+      <h3>問題1:頭頸部の代償</h3>
+      <p>本来、首の役割は「軽い頭(約5kg)を、立てて支える」ことです。けれど、デスクワーク・スマホ・前屈姿勢が続くと、頭が前に出てきます。<strong>これが、肩こりの直接的な原因</strong>です。</p>
+      <h3>問題2:胸郭の可動性低下</h3>
+      <p>胸郭(肋骨)は、本来、呼吸とともに3次元に拡張・収縮する、柔軟な構造です。長時間の座位で胸郭が固まると、肩甲骨も動けなくなり、首・肩への負担が極大化します。</p>
+      <p class="quote-box">肩こりは、肩の問題ではなく、<br>頭頸部と胸郭の問題。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>なぜ肩甲骨ストレッチでは<em>抜けない</em>のか。</h2>
+      <p>肩甲骨は、それ単独で動く骨ではなく、<strong>胸郭の上を滑るように動く</strong>構造になっています。胸郭が固まっていると、いくら肩甲骨を動かそうとしても、根本的には動きが広がりません。</p>
+      <p>つまり、肩甲骨ストレッチが効かないのではなく、<strong>その前提となる胸郭の可動性が確保されていない</strong>のです。</p>
+      <p>※ 首肩コースは、現在準備中です。腰膝コースが立ち上がってから、第2弾として2026年後半にローンチ予定です。</p>
+      <div class="cta-card">
+        <div class="cta-card-inner">
+          <h3>カラダビの<em>3カ月プログラム</em></h3>
+          <p>まずは腰膝コースからご検討ください。詳細はお問い合わせください。</p>
+          <a class="btn btn-koshi" href="index.html#contact">詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="section-eyebrow">— Related</div>
+      <h2 class="section-title">関連する症状ページ</h2>
+      <div class="related-grid">
+        <div class="related-card" data-page="koshi">
+          <h4>腰の痛み</h4>
+          <p>肩こりと慢性腰痛は、姿勢制御の崩れという共通の根を持ちます。</p>
+          <a>腰の痛みのページへ</a>
+        </div>
+        <div class="related-card" data-page="jiritsu">
+          <h4>慢性疲労・自律神経</h4>
+          <p>肩こりの背後に、自律神経の乱れが隠れていることがあります。</p>
+          <a>慢性疲労・自律神経へ</a>
+        </div>
+        <div class="related-card" data-page="hiza">
+          <h4>膝の痛み</h4>
+          <p>姿勢の崩れは、膝の負担にも繋がっていきます。</p>
+          <a>膝の痛みのページへ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ Symptom: Jiritsu (自律神経) ============ -->
+<div class="page-section symptom-jiritsu-page" id="page-jiritsu">
+  <section class="symptom-hero">
+    <div class="symptom-hero-inner">
+      <div class="breadcrumb"><a data-page="home">ホーム</a><span>/</span><a data-page="home">症状から探す</a><span>/</span>慢性疲労・自律神経</div>
+      <div class="symptom-eyebrow">— Symptom 04 / Autonomic Nerve</div>
+      <h1 class="symptom-title">慢性疲労・<em>自律神経</em>の乱れに、<br>身体側からアプローチ。</h1>
+      <p class="symptom-lead">原因不明の倦怠感、眠っても疲れが取れない、なんとなく体調が悪い──<br>これらの症状の背後には、自律神経の乱れがあることが多い。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>このページが、<em>対象とする方</em></h2>
+      <div class="checklist">
+        <h4>こんな方へ</h4>
+        <ul>
+          <li>慢性的な倦怠感があり、何をしても疲れが取れない</li>
+          <li>夜眠れない、または、眠っても深く眠れない</li>
+          <li>朝、起き上がるのが辛い、起立性の症状がある</li>
+          <li>気圧や天気で体調が大きく変わる</li>
+          <li>動悸や息苦しさを感じることがある</li>
+          <li>病院では「自律神経の乱れ」と言われ、薬を処方されるが根本的には変わらない</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="content-inner">
+      <h2>自律神経と<em>身体</em>は、密接に繋がっている。</h2>
+      <h3>呼吸が、自律神経の入口</h3>
+      <p>自律神経の中で、唯一意識的にコントロールできるのが「呼吸」です。深く長い呼吸は副交感神経を優位にし、浅く短い呼吸は交感神経を優位にする。<strong>呼吸を変えると、自律神経が変わる</strong>。</p>
+      <p>慢性疲労・自律神経の不調を訴える方のほぼ全員に、呼吸の問題があります。横隔膜が動かず、肩で息をするような浅い呼吸。</p>
+      <h3>姿勢と内臓・呼吸の関係</h3>
+      <p>猫背の姿勢は、胸郭を圧迫し、横隔膜の動きを制限し、内臓の働きを抑え込みます。<strong>姿勢を整えることで、呼吸が深くなり、自律神経が整う</strong>道筋が開けます。</p>
+      <p class="quote-box">自律神経の整え方は、<br>呼吸と姿勢から、入る。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>3カ月後に<em>期待できる変化</em>。</h2>
+      <div class="checklist">
+        <h4>多くの方に現れる変化</h4>
+        <ul>
+          <li>呼吸が深くなり、自然に肩の力が抜ける</li>
+          <li>朝の起き上がりが、以前より楽になる</li>
+          <li>夜の眠りが、深くなる感覚がある</li>
+          <li>気圧や天気の影響を受けにくくなる</li>
+          <li>身体の重さや倦怠感が、軽減する</li>
+        </ul>
+      </div>
+      <p>※ 自律神経の不調は、医学的な評価と治療が必要なケースもあります。本プログラムは医療と並行して身体側からアプローチするものであり、医療を代替するものではありません。</p>
+      <div class="cta-card">
+        <div class="cta-card-inner">
+          <h3>カラダビの<em>3カ月プログラム</em></h3>
+          <p>呼吸と姿勢から、自律神経を整える3カ月。</p>
+          <a class="btn btn-koshi" href="index.html#contact">詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="section-eyebrow">— Related</div>
+      <h2 class="section-title">関連する症状ページ</h2>
+      <div class="related-grid">
+        <div class="related-card" data-page="kata">
+          <h4>肩こり・首痛</h4>
+          <p>慢性的な肩こりと自律神経の乱れは、深く関係しています。</p>
+          <a>肩こり・首痛のページへ</a>
+        </div>
+        <div class="related-card" data-page="koshi">
+          <h4>腰の痛み</h4>
+          <p>慢性腰痛の背後にも、自律神経の問題が隠れていることがあります。</p>
+          <a>腰の痛みのページへ</a>
+        </div>
+        <div class="related-card" data-page="pd">
+          <h4>パーキンソン病</h4>
+          <p>PDの方も、自律神経症状を抱えていることが多くあります。</p>
+          <a>パーキンソン病のページへ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ Symptom: PD ============ -->
+<div class="page-section symptom-pd-page" id="page-pd">
+  <section class="symptom-hero">
+    <div class="symptom-hero-inner">
+      <div class="breadcrumb"><a data-page="home">ホーム</a><span>/</span><a data-page="home">症状から探す</a><span>/</span>パーキンソン病</div>
+      <div class="symptom-eyebrow">— Symptom 05 / Parkinson's Disease</div>
+      <h1 class="symptom-title">パーキンソン病の<em>運動療法</em>。<br>通院困難でも、自宅で続ける方法。</h1>
+      <p class="symptom-lead">パーキンソン病(PD)当事者の方、ご家族、支援する方々へ。<br>通院が難しい時期でも、自宅で安全に、確実に続けられる運動療法をお届けします。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>このページが、<em>対象とする方</em></h2>
+      <div class="checklist">
+        <h4>こんな方へ</h4>
+        <ul>
+          <li>パーキンソン病(PD)と診断された方ご本人</li>
+          <li>PDの家族をケアしているご家族の方</li>
+          <li>PDの方を支援する介護職・医療職の方</li>
+          <li>進行に伴い、通院・通所が難しくなってきた方</li>
+          <li>姿勢の崩れ・歩行の不安定・転倒への不安がある方</li>
+          <li>退院後、自宅で何をすればいいか分からない方</li>
+        </ul>
+      </div>
+      <p>パーキンソン病に対しては、薬物療法と並行して<strong>運動療法が極めて重要</strong>であることが、医学的に明確に認められています。</p>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="content-inner">
+      <h2>PD運動療法の<em>3つの柱</em>。</h2>
+      <h3>柱1:姿勢制御の維持</h3>
+      <p>PDの進行とともに、姿勢が前傾し、重心が前に移動していきます。これを抑制し、できるだけ垂直軸を保つ訓練が、転倒予防の根幹です。</p>
+      <h3>柱2:歩行の保持</h3>
+      <p>歩行の小刻み化・すくみ足・突進現象は、PDの代表的な症状です。これらに対しては、<strong>意識的な大きな歩幅・聴覚や視覚的なリズム手がかり</strong>が有効です。</p>
+      <h3>柱3:可動域・筋力の維持</h3>
+      <p>動きが少なくなることで、関節可動域や筋力が低下していきます。<strong>緩やかなストレッチ・体幹の可動性訓練・抗重力筋の活性化</strong>を、毎日少しずつ続けることが大切です。</p>
+      <p class="quote-box">PDの運動療法は、<br>「続けられる」が、すべて。</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="content-inner">
+      <h2>カラダビが提供できる<em>サポート</em>。</h2>
+      <p>カラダビは、現時点では PD専用のオンラインプログラムを正式リリースしていません。けれど、PD関連の資料はすでに整備しており、ご希望の方には個別にお渡しできる体制を整えています。</p>
+      <h3>提供可能なリソース</h3>
+      <p><strong>1. PD自宅運動療法ガイド(冊子)</strong> — 通院困難な方が自宅で継続できる運動の解説。</p>
+      <p><strong>2. PDセルフケアコース動画</strong> — 第1〜7冊にわたる段階的な動画コース(現在開発中)。</p>
+      <p><strong>3. ご家族・支援者向け指導マニュアル</strong> — PDの方を支援する方が、適切に介入できるための解説書。</p>
+      <p><strong>4. 個別オンライン相談</strong> — 1対1のオンライン相談で、その方の状態に合わせた運動の組み立てを一緒に考えます。</p>
+      <p>PD専用プログラムの正式リリースは、2026年後半〜2027年を予定しています。</p>
+      <div class="cta-card">
+        <div class="cta-card-inner">
+          <h3>PDに関する<em>個別相談</em></h3>
+          <p>PDに関するお問い合わせは、お問い合わせフォームから。<br>「PD関連」と一言添えてください。山崎より直接お返事します。</p>
+          <a class="btn btn-koshi" href="index.html#contact">お問い合わせフォームへ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="related-inner">
+      <div class="section-eyebrow">— Related</div>
+      <h2 class="section-title">関連する症状ページ</h2>
+      <div class="related-grid">
+        <div class="related-card" data-page="jiritsu">
+          <h4>慢性疲労・自律神経</h4>
+          <p>PDの方は、自律神経症状を抱えていることが多くあります。</p>
+          <a>慢性疲労・自律神経へ</a>
+        </div>
+        <div class="related-card" data-page="koshi">
+          <h4>腰の痛み</h4>
+          <p>PDの姿勢変化に伴い、腰の問題が出る方も多くいます。</p>
+          <a>腰の痛みのページへ</a>
+        </div>
+        <div class="related-card" data-page="hiza">
+          <h4>膝の痛み</h4>
+          <p>PDによる動作の制限が、膝の負担に繋がる場合があります。</p>
+          <a>膝の痛みのページへ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>カラダビ</h3>
+        <p class="footer-tagline">— 動ける身体は、美しい。 —</p>
+        <p class="footer-desc">理学療法士・体芯力認定講師の山崎による、卒業させるための身体の学校。湯河原・オンライン対応。</p>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="index.html">カラダビとは</a></li>
+          <li><a href="index.html">山崎について</a></li>
+          <li><a href="index.html">5層構造の哲学</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Symptoms</h4>
+        <ul>
+          <li><a data-page="koshi">腰の痛み</a></li>
+          <li><a data-page="hiza">膝の痛み</a></li>
+          <li><a data-page="kata">肩こり・首痛</a></li>
+          <li><a data-page="jiritsu">慢性疲労・自律神経</a></li>
+          <li><a data-page="pd">パーキンソン病</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#offer">体験講座</a></li>
+          <li><a href="index.html#offer">初回評価</a></li>
+          <li><a href="index.html#offer">3カ月プログラム</a></li>
+          <li><a href="index.html#offer">月額会員</a></li>
+          <li><a href="index.html#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 KARADA-BI · All rights reserved.</span>
+      <span class="footer-final-tag">動ける身体は、美しい。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ページ切替えのSPA的な実装
+(function() {
+  const pages = document.querySelectorAll('.page-section');
+  const navLinks = document.querySelectorAll('.site-nav a[data-page]');
+
+  function showPage(pageName) {
+    // すべてのページを非表示
+    pages.forEach(p => p.classList.remove('is-active'));
+    // 対象ページを表示
+    const target = document.getElementById('page-' + pageName);
+    if (target) {
+      target.classList.add('is-active');
+    } else {
+      // フォールバック:ホームを表示
+      document.getElementById('page-home').classList.add('is-active');
+    }
+
+    // ナビのアクティブ状態
+    navLinks.forEach(a => a.classList.remove('is-active'));
+    const activeNav = document.querySelector('.site-nav a[data-page="' + pageName + '"]');
+    if (activeNav) activeNav.classList.add('is-active');
+
+    // ページ最上部にスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // モバイルメニューを閉じる
+    document.getElementById('nav').classList.remove('is-open');
+
+    // URLハッシュを更新(ブラウザバック対応)
+    if (history.pushState) {
+      history.pushState(null, '', '#' + pageName);
+    } else {
+      location.hash = '#' + pageName;
+    }
+  }
+
+  // すべての data-page クリックを処理
+  document.body.addEventListener('click', function(e) {
+    const target = e.target.closest('[data-page]');
+    if (!target) return;
+    e.preventDefault();
+    const pageName = target.getAttribute('data-page');
+    showPage(pageName);
+  });
+
+  // ブラウザの戻る/進むに対応
+  window.addEventListener('popstate', function() {
+    const hash = location.hash.replace('#', '');
+    if (hash) showPage(hash);
+    else showPage('home');
+  });
+
+  // 初期表示:URLハッシュがあればそのページ
+  const initialHash = location.hash.replace('#', '');
+  if (initialHash) {
+    showPage(initialHash);
+  }
+})();
+</script>
+
+</body>
+</html>
